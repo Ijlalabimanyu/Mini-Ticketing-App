@@ -1,79 +1,49 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Mini Ticketing App
 
-# Getting Started
+## Overview
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+The Mini Ticketing App is a simple React Native application designed to manage events and validate tickets using QR codes. The app includes user authentication, event listing, event details, and QR code scanning functionality. It adheres to a provided Figma design and uses `react-native-qrcode-scanner` for QR code functionality.
 
-## Step 1: Start the Metro Server
+## Features
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **User Authentication**: Hardcoded login and registration screens with basic error handling.
+- **Event Listing**: Displays a list of mock events with navigation to event details.
+- **Event Details**: Shows detailed information about a selected event.
+- **QR Code Scanner**: Scans QR codes to validate tickets and navigate to event details.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Setup Instructions
 
-```bash
-# using npm
-npm start
+1. **Clone the Repository**
 
-# OR using Yarn
-yarn start
-```
+   ```bash
+   git clone https://github.com/Ijlalabimanyu/Mini-Ticketing-App.git
+   cd min-ticketing-app
 
-## Step 2: Start your Application
+2. **Install Dependencies**
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+    npm install
 
-### For Android
+3. **Install Additional Package**
 
-```bash
-# using npm
-npm run android
+    npm install @react-navigation/native @react-navigation/stack react-native-qrcode-scanner
 
-# OR using Yarn
-yarn android
-```
+## Design Choices
 
-### For iOS
+Authentication: Implemented using hardcoded credentials for simplicity. State management is handled using React’s useState for managing user login state.
 
-```bash
-# using npm
-npm run ios
+Event Listing and Details: The FlatList component is used to render a list of events. Event data is hardcoded for demonstration purposes. Navigation is handled using react-navigation for seamless transitions between screens.
 
-# OR using Yarn
-yarn ios
-```
+QR Code Scanning: Integrated react-native-qrcode-scanner to handle QR code scanning. The QR code scanner is designed to recognize event IDs and navigate to the corresponding event detail page or show an error if the ID is not found.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Challenge Encountered
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- **QR Code Scanner**: Configuring the QR code scanner to work with native Android files required modifying AndroidManifest.xml and ensuring all necessary permissions were granted.
 
-## Step 3: Modifying your App
+- **Design Adherence**: Ensuring the app's UI closely followed the Figma design involved precise styling and layout adjustments. Special attention was given to alignment, spacing, and component styling.
 
-Now that you have successfully run the app, let's modify it.
+## Running the App on an Android Emulator
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+1. **Start Android Emulator**
+2. **Run The App** : npx react-native run-android
+3. **Testing** : Use the hardcoded credentials test@example.com and password to log in.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
